@@ -6,7 +6,7 @@
 
 ## Introduction
 
-In the previous lesson, we discussed the concept of inheritance. We learned that through subclasses, a certain class under a super class, the subclass has access to all of the methods of its parent. Inheriting one class from another makes sense. The subclass can be understood as a child or subordinate of the super class. For example, a car is a type of vehicle, so it makes sense for the `Car` class to *inherit* from the `Vehicle` class.
+In the previous lesson, we discussed the concept of inheritance. We learned that through subclasses, a certain class under a super class, the subclass has access to all of the methods of its parent. Inheriting one class from another makes sense. The subclass can be understood as a child or subordinate of the super class. For example, a car is a type of vehicle, so it makes sense for the `Car` class to _inherit_ from the `Vehicle` class.
 
 Let's think about a slightly different type of example, one that is less hierarchical. We could easily envision writing an app that models the environment of a dance performance. Such an app might have a `Dancer` class. Dancers, we know, perform dances. Similarly, we could imagine a little girl going to see the Nutcracker ballet one Christmas, coming home and wanting to practice all of the ballet moves from the show. So, we might write a `Kid` class in which an instance of that class, our little girl who has gone to see the ballet, should have access to all those ballet moves (her performance skill notwithstanding). This situation is not hierarchical, like our `Car` and `Vehicle` example. Instead, `Kid` and `Dancer` simply need to share some functionality, without being related in any other meaningful way.
 
@@ -14,7 +14,7 @@ This is where modules come in. Modules allow us to collect and bundle a group of
 
 ## Code Along I: Including Module Methods as Instance Methods
 
-***This is a code along exercise. Fork and clone this repo by clicking the Github link at the top of the page. Follow along with the walk-through below to get your code working. Get the tests to pass.***
+**_This is a code along exercise. Fork and clone this repo by clicking the Github link at the top of the page. Follow along with the walk-through below to get your code working. Get the tests to pass._**
 
 ### Step I: Defining Our Module
 
@@ -47,7 +47,7 @@ module Dance
 end
 ```
 
-Okay, now we'll define our `Kid` class and tell it to *include* the capabilities of the `Dance` module.
+Okay, now we'll define our `Kid` class and tell it to _include_ the capabilities of the `Dance` module.
 
 ### Step 2: Defining the Classes
 
@@ -67,11 +67,9 @@ end
 
 Now we're ready to include our module in our classes:
 
-
 ### Step 3: Including the Module
 
 To lend our two classes all of the methods of the `Dance` module, we use the `include` keyword:
-
 
 ```ruby
 class Kid
@@ -97,7 +95,7 @@ class Dancer
 end
 ```
 
-If we use the `include` keyword, we allow our classes to use all of the methods of the included module as *instance* methods. We'll talk about how to lend a module's methods as *class* methods in a minute.
+If we use the `include` keyword, we allow our classes to use all of the methods of the included module as _instance_ methods. We'll talk about how to lend a module's methods as _class_ methods in a minute.
 
 Now that we've included the module, open up `bin/dance_party` and get familiar with following code:
 
@@ -121,7 +119,7 @@ Mikhail says: Thank you, thank you. It was a pleasure to dance for you all.
 
 ## Code Along II: Extending Module Methods as Class Methods
 
-In order to lend a module's methods to a class as *class methods*, we use the `extend` keyword. Let's write yet another module that we can extend into our classes as class methods. For the purposes of this example, let's create a shareable class method, `metadata`, which will report on some pertinent (shared) information regarding both classes.
+In order to lend a module's methods to a class as _class methods_, we use the `extend` keyword. Let's write yet another module that we can extend into our classes as class methods. For the purposes of this example, let's create a shareable class method, `metadata`, which will report on some pertinent (shared) information regarding both classes.
 
 Open up the `lib/class_methods_module.rb` and define the following module and methods:
 
@@ -228,7 +226,7 @@ class Kid
 end
 ```
 
-*Note: remember to require the `fancy_dance.rb` file inside the `dancer.rb` and `kid.rb`, just like we did with our other file requirements.*
+_Note: remember to require the `fancy_dance.rb` file inside the `dancer.rb` and `kid.rb`, just like we did with our other file requirements._
 
 We refer to the name-spaced modules or classes with `::`. This syntax references the parent and child relationship of the nested modules.
 
@@ -272,6 +270,6 @@ That's it! Now that we are familiar with several methods of sharing code between
 
 ## Conclusion
 
-If you have a module whose methods you would like to be used in another class as __instance methods__, then you must __include__ the module.
+If you have a module whose methods you would like to be used in another class as **instance methods**, then you must **include** the module.
 
-If you want a module's methods to be used in another class as __class methods__, you must __extend__ the module.
+If you want a module's methods to be used in another class as **class methods**, you must **extend** the module.
